@@ -5,34 +5,281 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Styles */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
       padding: 20px;
-      background-color: #f4f4f4;
     }
-    h1, h2 {
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding: 20px 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #1a1a1a;
+      font-weight: 300;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    /* Project Card Styles */
+    .project {
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Different colors for each project */
+    .project:nth-child(1) {
+      background: #e3f2fd;
+    }
+
+    .project:nth-child(2) {
+      background: #f3e5f5;
+    }
+
+    .project:nth-child(3) {
+      background: #e8f5e8;
+    }
+
+    .project:nth-child(4) {
+      background: #fff3e0;
+    }
+
+    .project-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .project-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .project-info h2 {
+      font-size: 2rem;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .project-info p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.7;
+      text-align: justify;
+      font-weight: 400;
+    }
+
+    .project-video {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .project-video iframe {
+      width: 100%;
+      height: 500px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background: #f8f9fa;
+      border-radius: 15px;
+      margin-top: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    footer p {
       color: #333;
+      font-size: 1.1rem;
+      font-weight: 400;
     }
-    iframe {
-      max-width: 100%;
-      height: 315px;
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #0066cc;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .project {
+        padding: 25px;
+      }
+
+      .project-content {
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .project-info h2 {
+        font-size: 1.7rem;
+        text-align: center;
+      }
+
+      .project-info p {
+        text-align: left;
+      }
+
+      .project-video {
+        min-width: unset;
+        width: 100%;
+      }
+
+      .project-video iframe {
+        height: 400px;
+      }
+
+      main {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .project {
+        padding: 20px;
+      }
+
+      .project-info h2 {
+        font-size: 1.5rem;
+      }
+
+      .project-info p {
+        font-size: 1rem;
+      }
+
+      .project-video iframe {
+        height: 350px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to My Portfolio</h1>
+  <div class="container">
+    <header>
+      <h1>My Portfolio</h1>
+      <p class="subtitle">Showcasing my development journey</p>
+    </header>
 
-  <h2>Project 1: Demo Video</h2>
-  <p>This project is about [brief description of the project]. Watch the demo video below:</p>
+    <main>
+      <!-- Project 1 -->
+      <section class="project">
+        <div class="project-content">
+          <div class="project-info">
+            <h2>Project 1: Awesome Project</h2>
+            <p>This project is a demo of building a full-stack application using modern web technologies. It showcases my ability to create scalable, user-friendly applications with robust backend architecture and intuitive frontend design. The project demonstrates proficiency in database management, API development, and responsive web design principles.</p>
+          </div>
+          <div class="project-video">
+            <iframe src="https://youtube.com/embed/v7dJMUcV9W4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
 
-  <!-- YouTube Demo Video Embed -->
-  <iframe src="https://www.youtube.com/embed/your_video_id" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <!-- Project 2 -->
+      <section class="project">
+        <div class="project-content">
+          <div class="project-info">
+            <h2>Project 2: Task Management App</h2>
+            <p>This project is a comprehensive task management web application designed to help users organize their daily activities efficiently. Built with a focus on user experience, it features drag-and-drop functionality, real-time updates, and collaborative features that make team project management seamless and intuitive.</p>
+          </div>
+          <div class="project-video">
+            <iframe src="https://youtube.com/embed/EfL-tq8J8Eg" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
 
-  <h2>About Me</h2>
-  <p>Hi, I’m [Your Name], a passionate web developer with experience in [technologies you're familiar with].</p>
+      <!-- Project 3 -->
+      <section class="project">
+        <div class="project-content">
+          <div class="project-info">
+            <h2>Project 3: Real-Time Chat App</h2>
+            <p>This project showcases real-time messaging capabilities using websockets and modern communication protocols. The application supports multiple chat rooms, file sharing, emoji reactions, and user presence indicators. It demonstrates my expertise in real-time web technologies and creating engaging social interaction platforms.</p>
+          </div>
+          <div class="project-video" style="display: flex; justify-content: center; align-items: center;">
+            <a href="https://ehsu57.github.io/cs448b/" target="_blank" rel="noopener noreferrer" style="font-size: 24px;">View Project</a>
+          </div>
+        </div>
+      </section>
 
-  <h2>Contact</h2>
-  <p>Email: [your.email@example.com]</p>
+     <!-- Project 4 -->
+    <section class="project">
+      <div class="project-content">
+        <div class="project-info">
+          <h2>Project 4: Interactive Browser Game</h2>
+          <p>This is an engaging browser-based game built using HTML5 Canvas, JavaScript, and modern game development techniques. The game features smooth animations, collision detection, scoring systems, and progressive difficulty levels. It showcases my ability to create interactive entertainment applications with optimized performance.</p>
+        </div>
+        <div class="project-images">
+          <img src="RR website1.png" alt="Game Screenshot 1">
+          <img src="RR website2.png" alt="Game Screenshot 2">
+          <img src="RR website3.png" alt="Game Screenshot 3">
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <footer>
+      <p>Thank you for viewing my portfolio! Feel free to contact me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    </footer>
+  </div>
 </body>
 </html>
