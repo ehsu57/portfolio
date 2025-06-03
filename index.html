@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Evan's Portfolio</title>
   <style>
     /* General Styles */
     * {
@@ -35,14 +35,35 @@
       font-size: 3rem;
       color: #1a1a1a;
       font-weight: 300;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       letter-spacing: -0.02em;
     }
 
     .subtitle {
-      color: #666;
+      color: #555;
       font-size: 1.2rem;
       font-weight: 400;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 40px;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      line-height: 1.7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subtitle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px 20px 0 0;
     }
 
     main {
@@ -124,6 +145,30 @@
       border: none;
     }
 
+    /* Project Images Styles */
+    .project-images {
+      flex: 2; 
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .project-images img {
+      width: 95%; 
+      max-width: none; 
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-images img:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
     footer {
       text-align: center;
       padding: 30px 0;
@@ -159,6 +204,11 @@
         font-size: 2.5rem;
       }
 
+      .subtitle {
+        padding: 25px 30px;
+        font-size: 1.1rem;
+      }
+
       .project {
         padding: 25px;
       }
@@ -186,6 +236,15 @@
         height: 400px;
       }
 
+      .project-images {
+        min-width: unset;
+        width: 100%;
+      }
+      
+      .project-images img {
+        max-width: 200px;
+      }
+
       main {
         gap: 30px;
       }
@@ -194,6 +253,11 @@
     @media (max-width: 480px) {
       h1 {
         font-size: 2rem;
+      }
+
+      .subtitle {
+        padding: 20px 25px;
+        font-size: 1rem;
       }
 
       .project {
@@ -211,14 +275,22 @@
       .project-video iframe {
         height: 350px;
       }
+
+      .project-images {
+        gap: 10px;
+      }
+      
+      .project-images img {
+        max-width: 180px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>My Portfolio</h1>
-      <p class="subtitle">Showcasing my development journey</p>
+      <h1>Evan's Portfolio</h1>
+      <p class="subtitle">Hi there! I'm Evan, a computer science graduate student at Stanford University specializing in Human-Computer Interaction. I'm passionate about user experience and focus on designing intuitive, human-centered software applications. Below are some of my academic projects, highlighting my ability to collaborate on teams and rapidly design and develop functional prototypes.</p>
     </header>
 
     <main>
@@ -226,8 +298,11 @@
       <section class="project">
         <div class="project-content">
           <div class="project-info">
-            <h2>Project 1: Awesome Project</h2>
-            <p>This project is a demo of building a full-stack application using modern web technologies. It showcases my ability to create scalable, user-friendly applications with robust backend architecture and intuitive frontend design. The project demonstrates proficiency in database management, API development, and responsive web design principles.</p>
+            <h2>LockedIn: AI Mobile App for College Students</h2>
+            <p>LockedIn is a mobile app that helps college students collaborate more easily by addressing challenges like mismatched schedules and study habits. It uses AI to match users based on a study profile survey and to turn uploaded class materials into actionable tasks. Students can also join or create public study sessions within their courses. I designed the app's user flow and screen interactions. My team and I used Expo Go, React Native, Convex, and the OpenAI API for development. In just five weeks, we developed a functional fullstack prototype from concept to implementation.
+</p>
+            <a href="https://docs.google.com/document/d/1qbma6nusMbiWMEDI5ygYrARrvAbbXgCgox1X2eP-9zw/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style="font-size: 24px;">Click to view my written report!</a>
+
           </div>
           <div class="project-video">
             <iframe src="https://youtube.com/embed/v7dJMUcV9W4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -239,8 +314,10 @@
       <section class="project">
         <div class="project-content">
           <div class="project-info">
-            <h2>Project 2: Task Management App</h2>
-            <p>This project is a comprehensive task management web application designed to help users organize their daily activities efficiently. Built with a focus on user experience, it features drag-and-drop functionality, real-time updates, and collaborative features that make team project management seamless and intuitive.</p>
+            <h2>Wanderlust: Social Media for Travelers</h2>
+            <p>Wanderlust is a mobile app that lets users share travel experiences by posting photos and comments pinned to specific locations. Users can explore a map-based feed, view public posts, and create personal or shareable travel lists to document their journeys.
+
+Working on a team, I contributed to both the design and development of the app. I focused on creating intuitive user interfaces and implemented key features including Apple Maps integration, location-based pins for user posts, and a modal for viewing public posts. Using the MERN stack and Apple Maps API, our team developed a fully functional prototype in just one month.</p>
           </div>
           <div class="project-video">
             <iframe src="https://youtube.com/embed/EfL-tq8J8Eg" allowfullscreen></iframe>
@@ -252,8 +329,10 @@
       <section class="project">
         <div class="project-content">
           <div class="project-info">
-            <h2>Project 3: Real-Time Chat App</h2>
-            <p>This project showcases real-time messaging capabilities using websockets and modern communication protocols. The application supports multiple chat rooms, file sharing, emoji reactions, and user presence indicators. It demonstrates my expertise in real-time web technologies and creating engaging social interaction platforms.</p>
+            <h2>Interactive Data Visualization Webpage: Geographical Movie Trends</h2>
+            <p>This project presents movie trends around the world using multiple graphs and an interactive globe interface. Users can explore TMDb movie data by navigating our webpage, which includes a 3D Mapbox globe with dynamic popups and filters that reveal movie details based on geographic regions.
+The page was built with JavaScript, HTML, and CSS. It responds in real time to user interactions. I collaborated with a partner as part of a Data Visualization course, where I implemented the popup feature to display movie information on the globe and developed the filtering functionality.
+</p>
           </div>
           <div class="project-video" style="display: flex; justify-content: center; align-items: center;">
             <a href="https://ehsu57.github.io/cs448b/" target="_blank" rel="noopener noreferrer" style="font-size: 24px;">View Project</a>
@@ -265,20 +344,22 @@
     <section class="project">
       <div class="project-content">
         <div class="project-info">
-          <h2>Project 4: Interactive Browser Game</h2>
-          <p>This is an engaging browser-based game built using HTML5 Canvas, JavaScript, and modern game development techniques. The game features smooth animations, collision detection, scoring systems, and progressive difficulty levels. It showcases my ability to create interactive entertainment applications with optimized performance.</p>
+          <h2>Ravenswood Reads Website: Custom Logistics Platform for a Literacy Tutoring Program</h2>
+          <p>In this independent project, I took the initiative to propose, design, and develop the this website. The platform supports attendance tracking, tutor–tutee pairing, and performance analysis through a scalable data management system. I designed intuitive, user-friendly interfaces tailored for student tutors, parents, and program fellows, and incorporated user feedback to guide iterative improvements. Built with React and Firebase, the site is now actively used to improve program efficiency.</p>
         </div>
         <div class="project-images">
-          <img src="RR website1.png" alt="Game Screenshot 1">
-          <img src="RR website2.png" alt="Game Screenshot 2">
-          <img src="RR website3.png" alt="Game Screenshot 3">
+          <img src="RR website1.png" alt="Cannot locate picture">
+          <img src="RR website2.png" alt="Cannot locate picture">
+          <img src="RR website3.png" alt="Cannot locate picture">
+          <img src="RR website4.png" alt="Cannot locate picture">
+
         </div>
       </div>
     </section>
     </main>
 
     <footer>
-      <p>Thank you for viewing my portfolio! Feel free to contact me at <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p>Thanks for viewing my portfolio! Feel free to contact me at <a href="mailto:ehsu57@stanford.edu">ehsu57@stanford.edu</a></p>
     </footer>
   </div>
 </body>
